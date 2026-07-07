@@ -17,7 +17,7 @@
   <meta property="og:title" content="7th Sense Solutions — Clarity in Motion" />
   <meta property="og:description" content="We build the marketing, revenue, and operational systems that help businesses scale with clarity." />
   <meta property="og:url" content="https://7thsensesolutions.com/" />
-  <meta property="og:image" content="https://7thsensesolutions.com/og-image.png" />
+  <meta property="og:image" content="https://7thsensesolutions.com/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -25,11 +25,12 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="7th Sense Solutions — Clarity in Motion" />
   <meta name="twitter:description" content="Marketing, revenue, and operational systems that help businesses scale with clarity." />
-  <meta name="twitter:image" content="https://7thsensesolutions.com/og-image.png" />
+  <meta name="twitter:image" content="https://7thsensesolutions.com/assets/og-image.png" />
 
-  <!-- Favicon (SVG placeholder — replace with production asset) -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="favicon.svg" />
+  <!-- Favicon — 7th Sense Solutions brand mark -->
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/7ss-favicon-256.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/7ss-favicon-512.png" />
+  <link rel="apple-touch-icon" href="assets/7ss-favicon-512.png" />
 
   <!-- Fonts: Sora (display), Manrope (body), Bebas Neue (numerals), Barlow Condensed (labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,11 +74,7 @@
     <div class="nav__inner container">
       <a class="brand" href="#top" aria-label="7th Sense Solutions home">
         <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 40 40" width="34" height="34" role="img" aria-hidden="true">
-            <ellipse cx="20" cy="26.5" rx="12.5" ry="4" class="mk-eye" />
-            <path d="M9 11 H31 L19.5 33" class="mk-seven" fill="none" />
-            <circle cx="20" cy="26.5" r="2.3" class="mk-pupil" />
-          </svg>
+          <img src="assets/7ss-favicon-512.png" width="36" height="36" alt="" />
         </span>
         <span class="brand__type">
           <b>7th Sense</b>
@@ -135,47 +132,14 @@
           <p class="hero__note">Strategy &middot; Design &middot; Implementation — not just advice.</p>
         </div>
 
-        <!-- Custom abstract illustration: architectural "7" + lens/ellipse motif -->
+        <!-- Brand icon featured with ambient orbit rings -->
         <div class="hero__art" aria-hidden="true">
-          <svg viewBox="0 0 480 460" class="hero-svg" role="img" aria-label="Abstract system diagram">
-            <defs>
-              <linearGradient id="g-signal" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="var(--signal)"/>
-                <stop offset="1" stop-color="var(--emerald)"/>
-              </linearGradient>
-              <linearGradient id="g-em" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="var(--emerald)"/>
-                <stop offset="1" stop-color="var(--signal)"/>
-              </linearGradient>
-            </defs>
-
-            <!-- ambient orbit rings -->
-            <ellipse cx="240" cy="300" rx="205" ry="66" class="art-ring" />
-            <ellipse cx="240" cy="300" rx="150" ry="46" class="art-ring art-ring--2" />
-
-            <!-- connecting lines to nodes -->
-            <g class="art-lines">
-              <line x1="240" y1="230" x2="70"  y2="150" />
-              <line x1="240" y1="230" x2="410" y2="140" />
-              <line x1="240" y1="230" x2="120" y2="360" />
-              <line x1="240" y1="230" x2="380" y2="360" />
-            </g>
-
-            <!-- the architectural 7 -->
-            <path d="M120 96 H360 L228 356" class="art-seven" fill="none" />
-
-            <!-- shallow ellipse "eye/lens" -->
-            <ellipse cx="240" cy="230" rx="86" ry="26" class="art-eye" />
-            <circle cx="240" cy="230" r="12" class="art-pupil" />
-
-            <!-- system nodes -->
-            <g class="art-nodes">
-              <circle cx="70"  cy="150" r="9" />
-              <circle cx="410" cy="140" r="9" />
-              <circle cx="120" cy="360" r="9" />
-              <circle cx="380" cy="360" r="9" />
-            </g>
-          </svg>
+          <div class="hero-badge">
+            <span class="hero-ring"></span>
+            <span class="hero-ring hero-ring--2"></span>
+            <span class="hero-ring hero-ring--3"></span>
+            <img class="hero-icon" src="assets/7ss-favicon-1024.png" width="360" height="360" alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -190,7 +154,7 @@
             <span class="stat__label">Years in marketing &amp; ops</span>
           </div>
           <div class="stat">
-            <span class="stat__num" data-count="140" data-suffix="+">0</span>
+            <span class="stat__num" data-count="600" data-suffix="+">0</span>
             <span class="stat__label">Campaigns managed</span>
           </div>
           <div class="stat">
@@ -256,7 +220,7 @@
               <svg class="svc-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             </div>
             <h3>Email &amp; Lifecycle</h3>
-            <p>Flows and campaigns in Klaviyo and HubSpot that follow up so you don't have to.</p>
+            <p>Lifecycle flows and campaigns built in whatever platform you run — Klaviyo, HubSpot, Mailchimp, and beyond — that follow up so you don't have to.</p>
             <p class="svc-out">Outcome: revenue from the list you already have.</p>
           </article>
 
@@ -427,18 +391,18 @@
     <section class="about" id="about" aria-labelledby="about-title">
       <div class="container about__grid">
         <div class="about__portrait">
-          <div class="portrait" role="img" aria-label="Portrait of Jordan Fletcher — placeholder">
+          <figure class="portrait">
             <span class="reg reg--tl" aria-hidden="true"></span>
             <span class="reg reg--br" aria-hidden="true"></span>
-            <span class="portrait__mono">JF</span>
-            <span class="portrait__cap">Portrait placeholder</span>
-          </div>
+            <img src="assets/jordan-fletcher.jpg" alt="Jordan Fletcher, founder of 7th Sense Solutions" width="828" height="1031" loading="lazy" />
+          </figure>
         </div>
         <div class="about__copy">
           <p class="eyebrow"><span class="eyebrow__rule"></span>Who's behind it</p>
           <h2 id="about-title" class="sec-title">I build the machine, then hand you the keys.</h2>
-          <p>I'm Jordan Fletcher. I've spent close to a decade in the space where marketing meets operations — the unglamorous middle where campaigns actually get built, tracked, and improved.</p>
-          <p>Most of what I do isn't clever tactics. It's making sure the pipeline is clean, the follow-up fires, the reporting is honest, and the next person can pick up the work without a two-hour handoff. CRM and automation, HubSpot and Klaviyo, paid media and analytics — tools in service of a system, never the other way around.</p>
+          <p>I'm Jordan Fletcher. Over nine years and more than 600 campaigns, I've worked both agency-side and in-house, across B2B and B2C, SaaS, service, and product businesses — the space where marketing meets operations, and where campaigns actually get built, tracked, and improved.</p>
+          <p>Most of what I do isn't clever tactics. It's making sure the pipeline is clean, the follow-up fires, the reporting is honest, and the next person can pick up the work without a two-hour handoff. I'm platform-agnostic by design — HubSpot, Klaviyo, Mailchimp, GoHighLevel, whatever fits — because tools should serve the system, never the other way around.</p>
+          <p>I'm also a mom of two, which is its own daily masterclass in project management, efficiency, and organization. Call it a supernatural sense for keeping a dozen moving parts calm and on track — it's the same instinct I bring to every system I build.</p>
           <p>I work best with owners who want a partner that designs, builds, and implements — not a deck and a goodbye. If that's you, we'll get along.</p>
           <a class="btn btn--ghost" href="#contact">Start a conversation <span aria-hidden="true">&rarr;</span></a>
         </div>
@@ -454,19 +418,18 @@
         </header>
         <div class="quote-grid">
           <figure class="quote">
-            <blockquote>Jordan didn't hand us a strategy and leave. He built the whole thing, showed the team how it ran, and our follow-up finally stopped falling through the cracks.</blockquote>
-            <figcaption><span class="quote__who">Founder</span><span class="quote__meta">Home services · placeholder</span></figcaption>
+            <blockquote>Jordan didn't hand us a strategy and disappear. She built the whole system, showed our team how to run it, and our follow-up finally stopped falling through the cracks.</blockquote>
+            <figcaption><span class="quote__who">Saguaro</span><span class="quote__meta">Client &middot; Owner</span></figcaption>
           </figure>
           <figure class="quote">
-            <blockquote>We stopped guessing. For the first time our pipeline numbers match what's actually happening, and I can plan a quarter without crossing my fingers.</blockquote>
-            <figcaption><span class="quote__who">Operations Lead</span><span class="quote__meta">B2B services · placeholder</span></figcaption>
+            <blockquote>Our outreach used to depend on whoever remembered to send it. Jordan automated the whole thing — now every inquiry gets a response and our calendar stays full.</blockquote>
+            <figcaption><span class="quote__who">Show Me Care</span><span class="quote__meta">Client &middot; Director</span></figcaption>
           </figure>
           <figure class="quote">
-            <blockquote>The automations quietly gave us back a full day a week. It's the least flashy and most valuable thing we've done all year.</blockquote>
-            <figcaption><span class="quote__who">Owner</span><span class="quote__meta">E-commerce · placeholder</span></figcaption>
+            <blockquote>She built campaigns that actually bring people through the door, then set it all up so we can run it ourselves. Our weekends have never been busier.</blockquote>
+            <figcaption><span class="quote__who">Crossroads Donuts</span><span class="quote__meta">Client &middot; Owner</span></figcaption>
           </figure>
         </div>
-        <p class="stats__foot">Testimonials shown are placeholders — replace with attributed client quotes.</p>
       </div>
     </section>
 
@@ -479,8 +442,8 @@
           <h2 id="contact-title" class="sec-title">Tell me what's slowing you down.</h2>
           <p class="contact__sub">Every engagement starts with a short audit so we're solving the real problem, not a guessed one. Send a note and I'll get back within two business days.</p>
           <ul class="contact__links">
-            <li><span class="contact__k">Email</span><a href="mailto:hello@7thsensesolutions.com">hello@7thsensesolutions.com</a></li>
-            <li><span class="contact__k">LinkedIn</span><a href="#" rel="noopener">/in/jordanfletcher</a></li>
+            <li><span class="contact__k">Email</span><a href="mailto:jordan@7thsensesolutions.com">jordan@7thsensesolutions.com</a></li>
+            <li><span class="contact__k">LinkedIn</span><a href="https://www.linkedin.com/in/jordan-fletcher-demand-gen/" target="_blank" rel="noopener">/in/jordan-fletcher-demand-gen</a></li>
           </ul>
         </div>
 
@@ -518,16 +481,12 @@
       <div class="footer__brand">
         <a class="brand" href="#top" aria-label="7th Sense Solutions home">
           <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true">
-              <ellipse cx="20" cy="26.5" rx="12.5" ry="4" class="mk-eye" />
-              <path d="M9 11 H31 L19.5 33" class="mk-seven" fill="none" />
-              <circle cx="20" cy="26.5" r="2.3" class="mk-pupil" />
-            </svg>
+            <img src="assets/7ss-favicon-512.png" width="32" height="32" alt="" />
           </span>
           <span class="brand__type"><b>7th Sense</b><em>Solutions</em></span>
         </a>
         <p class="footer__tag">Clarity in Motion.</p>
-        <p class="footer__desc">Marketing &amp; operations agency — Jordan Fletcher. Strategy · Design · Implementation.</p>
+        <p class="footer__desc">Marketing &middot; Systems &middot; Growth — by Jordan Fletcher. Strategy, design, and implementation.</p>
       </div>
 
       <nav class="footer__col" aria-label="Services">
@@ -567,9 +526,8 @@
     <div class="container footer__bar">
       <p>&copy; <span id="year">2026</span> 7th Sense Solutions. All rights reserved.</p>
       <div class="footer__social">
-        <a href="#" aria-label="LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4.5 3.5A2 2 0 1 1 4 7a2 2 0 0 1 .5-3.5ZM3 9h3v12H3zM9 9h2.9v1.7h.05A3.2 3.2 0 0 1 15 9c3 0 3.5 2 3.5 4.5V21h-3v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
-        <a href="#" aria-label="X" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 3h4.7l4 5.6L16.5 3H21l-6.6 8L21 21h-4.7l-4.3-6L6.5 21H3l7-8.4z"/></svg></a>
-        <a href="mailto:hello@7thsensesolutions.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        <a href="https://www.linkedin.com/in/jordan-fletcher-demand-gen/" target="_blank" aria-label="LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4.5 3.5A2 2 0 1 1 4 7a2 2 0 0 1 .5-3.5ZM3 9h3v12H3zM9 9h2.9v1.7h.05A3.2 3.2 0 0 1 15 9c3 0 3.5 2 3.5 4.5V21h-3v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+        <a href="mailto:jordan@7thsensesolutions.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
       </div>
     </div>
   </footer>
