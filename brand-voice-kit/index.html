@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Brand Voice Kit</title>
+<meta name="description" content="Your Brand Voice Kit from 7th Sense Solutions. Four steps to get AI writing in your own voice." />
+<link rel="icon" href="/7ss-favicon-256.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #F7F5F2;
+  --surface: #FFFFFF;
+  --slip: #EFF0FB;
+  --ink: #14181F;
+  --ink-soft: #5A6472;
+  --line: rgba(20, 24, 31, 0.10);
+  --signal: #5B6CFF;
+  --signal-deep: #3B49D6;
+  --on-signal: #FFFFFF;
+  --emerald: #19B47A;
+  --emerald-soft: #E3F5EC;
+  --focus: #3B49D6;
+  --f-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --f-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131721;
+    --surface: #1B2030;
+    --slip: #222844;
+    --ink: #F2F1EE;
+    --ink-soft: #A6AEBD;
+    --line: rgba(242, 241, 238, 0.12);
+    --signal: #7C8AFF;
+    --signal-deep: #A3ADFF;
+    --on-signal: #0E1120;
+    --emerald: #3FD39A;
+    --emerald-soft: #173A2E;
+    --focus: #A3ADFF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131721;
+  --surface: #1B2030;
+  --slip: #222844;
+  --ink: #F2F1EE;
+  --ink-soft: #A6AEBD;
+  --line: rgba(242, 241, 238, 0.12);
+  --signal: #7C8AFF;
+  --signal-deep: #A3ADFF;
+  --on-signal: #0E1120;
+  --emerald: #3FD39A;
+  --emerald-soft: #173A2E;
+  --focus: #A3ADFF;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.12; letter-spacing: -0.02em; margin: 0; }
+p { margin: 0 0 1em; }
+a { color: var(--signal-deep); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
+}
+
+.wrap { max-width: 640px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Header */
+.top { padding: 20px 0 0; }
+.brand { font-family: var(--f-display); font-weight: 700; font-size: 15px; color: var(--ink-soft); }
+.brand b { color: var(--ink); }
+
+/* Welcome */
+.hello { padding: 40px 0 28px; }
+.hello h1 { font-size: clamp(2.6rem, 11vw, 3.8rem); font-weight: 800; }
+.hello .lede { font-size: 1.15rem; color: var(--ink-soft); margin: 14px 0 22px; max-width: 32ch; }
+.progress { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; }
+.progress__bar { flex: 1; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.progress__fill { height: 100%; width: 0; background: var(--emerald); border-radius: 99px; transition: width .35s ease; }
+
+/* Step rail */
+.steps { list-style: none; margin: 0; padding: 0; }
+.step { position: relative; padding: 8px 0 40px 56px; }
+.step::before {
+  content: ""; position: absolute; left: 19px; top: 52px; bottom: 0;
+  width: 2px; background: var(--line);
+}
+.step:last-child::before { display: none; }
+.step__num {
+  position: absolute; left: 0; top: 4px;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 18px;
+  background: var(--surface); color: var(--signal-deep);
+  border: 2px solid var(--signal);
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+}
+.step.is-done .step__num { background: var(--emerald); border-color: var(--emerald); color: var(--on-signal); }
+.step.is-done::before { background: var(--emerald); }
+.step h2 { font-size: 1.6rem; font-weight: 800; padding-top: 4px; }
+.step__time { color: var(--ink-soft); font-size: 15px; margin: 4px 0 16px; }
+.step h3 { font-size: 1.05rem; font-weight: 700; margin: 22px 0 8px; }
+.step ol, .step ul { padding-left: 1.2em; margin: 0 0 1em; }
+.step li { margin-bottom: 6px; }
+.note { color: var(--ink-soft); font-size: 15px; }
+
+/* Prompt slips */
+.slip { background: var(--slip); border-radius: 14px; margin: 14px 0 18px; overflow: hidden; }
+.slip pre {
+  margin: 0; padding: 16px 16px 6px;
+  font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+  white-space: pre-wrap; word-wrap: break-word;
+  max-height: 260px; overflow: auto;
+}
+.slip.is-open pre { max-height: none; }
+.slip__more {
+  display: block; width: 100%; border: 0; background: transparent;
+  color: var(--signal-deep); font: 600 14px var(--f-body); padding: 6px 16px 10px; text-align: left;
+}
+.copy {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: 52px; border: 0;
+  background: var(--signal); color: var(--on-signal);
+  font: 700 16px var(--f-body); cursor: pointer;
+  transition: background .2s ease;
+}
+.copy:hover { background: var(--signal-deep); }
+.copy.is-copied { background: var(--emerald); }
+.copy:disabled { background: var(--line); color: var(--ink-soft); cursor: not-allowed; }
+
+/* Done button */
+.done {
+  margin-top: 8px; min-height: 48px; padding: 0 18px;
+  border-radius: 99px; border: 2px solid var(--emerald);
+  background: transparent; color: var(--ink);
+  font: 700 15px var(--f-body); cursor: pointer;
+}
+.step.is-done .done { background: var(--emerald-soft); }
+
+/* Video slot */
+.video { margin: 6px 0 18px; }
+.video iframe { width: 100%; aspect-ratio: 9 / 16; max-height: 70vh; border: 0; border-radius: 14px; background: var(--slip); }
+.video__placeholder {
+  border: 2px dashed var(--line); border-radius: 14px; padding: 18px;
+  color: var(--ink-soft); font-size: 15px; text-align: center;
+}
+
+/* Example + accordions */
+details { border-top: 1px solid var(--line); }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary {
+  list-style: none; cursor: pointer; padding: 16px 32px 16px 0; position: relative;
+  font-weight: 700; font-size: 1.02rem;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+"; position: absolute; right: 4px; top: 12px;
+  font: 400 24px var(--f-body); color: var(--signal-deep);
+}
+details[open] summary::after { content: "\2212"; }
+summary small { display: block; font-weight: 500; color: var(--ink-soft); font-size: 14px; }
+
+/* Tabs */
+.switch { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; background: var(--slip); border-radius: 99px; margin: 10px 0 18px; }
+.switch button {
+  min-height: 44px; border: 0; border-radius: 99px; background: transparent;
+  font: 700 15px var(--f-body); color: var(--ink-soft); cursor: pointer;
+}
+.switch button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(20,24,31,.12); }
+[hidden] { display: none !important; }
+
+/* Builder */
+.builder label { display: block; font-weight: 700; margin: 10px 0 8px; }
+.builder textarea {
+  width: 100%; min-height: 160px; padding: 14px; border-radius: 14px;
+  border: 2px solid var(--line); background: var(--surface); color: var(--ink);
+  font: 15px/1.5 var(--f-body); resize: vertical;
+}
+.builder textarea:focus { border-color: var(--signal); outline: none; }
+
+/* Robot list */
+.robot { list-style: none; padding: 0 !important; }
+.robot li { padding: 12px 0; border-bottom: 1px solid var(--line); margin: 0 !important; }
+.robot li:first-child { border-top: 1px solid var(--line); }
+.robot strong { display: block; }
+.robot span { color: var(--ink-soft); font-size: 15px; }
+
+.robot-sec { padding: 8px 0 40px; }
+.robot-sec h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 14px; }
+.robot-sec h3 { font-size: 1.05rem; font-weight: 700; margin: 22px 0 8px; }
+.robot-sec .note { margin-top: 14px; }
+.big-q { font-family: var(--f-display); font-weight: 700; font-size: 1.35rem; line-height: 1.3; margin: 0 0 18px; }
+
+/* Help */
+.help { border-top: 1px solid var(--line); padding: 28px 0 56px; }
+.help h2 { font-size: 1.3rem; margin-bottom: 8px; }
+.foot { color: var(--ink-soft); font-size: 14px; margin-top: 24px; }
+
+@media (min-width: 560px) {
+  .step { padding-left: 68px; }
+  .step__num { width: 46px; height: 46px; font-size: 20px; }
+  .step::before { left: 22px; top: 58px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap"><div class="brand"><b>7th Sense</b> Solutions</div></div>
+</header>
+
+<main class="wrap">
+  <section class="hello">
+    <h1>You're in.</h1>
+    <p class="lede">Let's get AI writing like you. Four steps, about 30 minutes. Your phone works best.</p>
+    <div class="progress" aria-live="polite">
+      <div class="progress__bar"><div class="progress__fill" id="progressFill"></div></div>
+      <span id="progressText">0 of 4 done</span>
+    </div>
+  </section>
+
+  <ol class="steps">
+
+    <!-- STEP 1 -->
+    <li class="step" id="step-1" data-step="1">
+      <div class="step__num" aria-hidden="true">1</div>
+      <h2>Talk to the AI</h2>
+      <p class="step__time">About 20 minutes</p>
+
+      <div class="video" data-video="step1"></div>
+
+      <h3>Get ready</h3>
+      <p>Find 5 to 10 things you wrote yourself: old texts to customers, emails, Facebook or Instagram captions. Real and messy is better than polished.</p>
+
+      <h3>Then</h3>
+      <ol>
+        <li>Open the Claude or ChatGPT app and start a new chat.</li>
+        <li>Tap <strong>Copy prompt</strong> below, paste it into the chat, and send it.</li>
+        <li>Tap the voice button. Answer each question out loud.</li>
+        <li>When it asks for your writing, leave voice mode and paste it all in.</li>
+        <li>It writes your voice guide. If anything sounds off, tell it.</li>
+      </ol>
+      <p class="note">If voice mode stops early, no problem. Finish by typing in the same chat.</p>
+
+      <div class="slip">
+<pre>I own a small business. Interview me so you can learn how I talk. Then write my voice guide so AI can write messages that sound like me.
+
+I'll answer out loud. Ask ONE short question at a time and wait for me. Keep it casual. No compliments. If my answer is short, ask one quick follow-up.
+
+The questions:
+1. What do you sell, and who are your regulars?
+2. When someone walks in, what do you say to them?
+3. If your shop were a person, how would they talk?
+4. What words or nicknames do you say all the time?
+5. What words make you cringe in ads?
+6. Do you use emoji, exclamation points, or all caps? How much?
+7. How do you talk about prices and deals?
+8. How do you want customers to feel when they read your messages?
+
+After question 8, ask me to paste 5 to 10 things I wrote. Study how I really write: sentence length, how I start and end, punctuation, emoji, words I repeat. If my writing and my answers don't match, go with my writing.
+
+Then write my voice guide in this exact layout. Use my own words where you can. No em dashes.
+
+MY VOICE GUIDE
+Who we are: (1 sentence)
+How we sound: (3 short phrases, each with one line on what it means)
+Words we use: (list)
+Words we never use: (list)
+How we write: (sentence length, openers, sign-off, emoji, exclamation points)
+Before and after: (2 examples. BEFORE sounds like generic AI. AFTER sounds like me.)
+Rules: (5 short rules)
+
+Then ask me what feels off and fix it. Start with question 1.</pre>
+        <button class="copy" type="button">Copy prompt</button>
+      </div>
+
+      <button class="done" type="button" aria-pressed="false">Mark step 1 done</button>
+    </li>
+
+    <!-- STEP 2 -->
+    <li class="step" id="step-2" data-step="2">
+      <div class="step__num" aria-hidden="true">2</div>
+      <h2>Save your voice guide</h2>
+      <p class="step__time">2 minutes</p>
+      <p>When the AI hands you your voice guide, copy the whole thing and save it somewhere easy, like your phone's notes app. You'll paste it in Step 3.</p>
+
+      <details>
+        <summary>See an example<small>A finished guide for a made-up bakery</small></summary>
+        <div class="slip">
+<pre>MY VOICE GUIDE
+
+Who we are: A small family bakery on Hollis Street. Neighbors, office folks, and parents after school pickup.
+
+How we sound:
+- Like a neighbor behind the counter. We use first names and talk like we'll see you tomorrow.
+- Short and specific. We name the item, the time, and the price.
+- A little dry humor. One joke, max. Usually about how fast things sell out.
+
+Words we use: swing by, the good bread, while they last, see you Saturday
+
+Words we never use: indulge, decadent, elevate, artisanal, treat yourself, don't miss out
+
+How we write: Short sentences. Open with the news. One exclamation point at most. One emoji or none. Sign off with "See you soon. Dana"
+
+Before and after:
+BEFORE: Indulge in our decadent pumpkin pies! Perfect for family gatherings and cozy nights. Order now before they're gone!
+AFTER: Pumpkin pie is back. $22 whole, $4 a slice. Preorders open now for Thanksgiving week.
+
+BEFORE: We're thrilled to announce our brand-new holiday cookie collection, crafted with love.
+AFTER: Holiday cookie boxes start Friday. A dozen mixed, $18. Last year they were gone by noon.
+
+Rules:
+- Lead with what's new.
+- Name the item, the price, and the time.
+- Say it once. No "hurry" unless it's true.
+- No fancy words.
+- If I wouldn't say it at the register, cut it.</pre>
+        </div>
+      </details>
+
+      <button class="done" type="button" aria-pressed="false">Mark step 2 done</button>
+    </li>
+
+    <!-- STEP 3 -->
+    <li class="step" id="step-3" data-step="3">
+      <div class="step__num" aria-hidden="true">3</div>
+      <h2>Paste it into a Project</h2>
+      <p class="step__time">About 10 minutes</p>
+      <p>A Project is a saved folder in the AI app. Every chat inside it already knows your voice. Works on free accounts.</p>
+
+      <div class="video" data-video="step3"></div>
+
+      <div class="builder">
+        <label for="guideInput">Paste your voice guide here</label>
+        <textarea id="guideInput" placeholder="MY VOICE GUIDE&#10;Who we are: ..."></textarea>
+        <p class="note">We'll add it to your Project instructions below. Nothing you paste leaves your phone.</p>
+        <div class="slip">
+<pre id="instructionsOut"></pre>
+          <button class="copy" type="button" id="copyInstructions" disabled>Paste your voice guide first</button>
+        </div>
+      </div>
+
+      <h3>Where to paste it</h3>
+      <div class="switch" role="tablist" aria-label="Which app do you use?">
+        <button type="button" role="tab" aria-selected="true" aria-controls="app-claude" id="tab-claude">Claude</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="app-chatgpt" id="tab-chatgpt">ChatGPT</button>
+      </div>
+      <div role="tabpanel" id="app-claude" aria-labelledby="tab-claude">
+        <ol>
+          <li>Go to <strong>claude.ai/projects</strong> and tap <strong>New Project</strong>.</li>
+          <li>Name it "[Your shop] Messages."</li>
+          <li>Tap <strong>Set project instructions</strong>, paste, and save.</li>
+        </ol>
+      </div>
+      <div role="tabpanel" id="app-chatgpt" aria-labelledby="tab-chatgpt" hidden>
+        <ol>
+          <li>In the ChatGPT sidebar, tap <strong>New project</strong>.</li>
+          <li>Name it "[Your shop] Messages."</li>
+          <li>Open the project settings, paste into the instructions, and save.</li>
+        </ol>
+      </div>
+
+      <h3>Test it</h3>
+      <p>Start a new chat inside the Project and type: <em>Write a text about [something real coming up].</em> If it sounds like you, you're set.</p>
+      <p class="note">Always start new chats inside the Project. A regular chat won't know your voice.</p>
+
+      <button class="done" type="button" aria-pressed="false">Mark step 3 done</button>
+    </li>
+
+    <!-- STEP 4 -->
+    <li class="step" id="step-4" data-step="4">
+      <div class="step__num" aria-hidden="true">4</div>
+      <h2>Ask for messages</h2>
+      <p class="step__time">A few minutes each</p>
+      <p>Copy a prompt into a chat inside your Project. Fill in the blanks. Skip any line that doesn't apply.</p>
+
+      <div class="video" data-video="step4"></div>
+
+      <div class="switch" role="tablist" aria-label="What kind of business do you run?">
+        <button type="button" role="tab" aria-selected="true" aria-controls="set-shop" id="tab-shop">I run a shop</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="set-service" id="tab-service">I run a service</button>
+      </div>
+
+      <div role="tabpanel" id="set-shop" aria-labelledby="tab-shop">
+        <details>
+          <summary>Text blast<small>Quick news, a new flavor, a restock</small></summary>
+          <div class="slip">
+<pre>Write a text to my customers.
+What's happening:
+When:
+Price:
+How to order:
+Start with my shop name. Keep it short. End with "Reply STOP to opt out" unless my texting app adds it.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Promo email<small>One offer or one piece of news</small></summary>
+          <div class="slip">
+<pre>Write a short email.
+What's happening:
+When:
+Price:
+Link:
+Give me 3 subject lines, 1 line of preview text (the short line people see next to the subject), and keep the email under 100 words.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Event<small>Tastings, pop-ups, markets</small></summary>
+          <div class="slip">
+<pre>Help me promote an event.
+What:
+When:
+Where:
+Cost:
+Why people should come:
+Write a post for now, an email for a few days before (with 3 subject lines and 1 line of preview text), and a text for the day of.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Social post<small>Instagram and Facebook captions</small></summary>
+          <div class="slip">
+<pre>Write an Instagram and Facebook caption.
+What it's about:
+The photo shows:
+Price, date, or link:
+Make the first line say something real, not a tease.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Holiday hours or preorders<small>Where the details matter most</small></summary>
+          <div class="slip">
+<pre>I need to announce holiday hours and/or preorders.
+Hours (each date):
+What to order and prices:
+Order by:
+How to order:
+Pickup days and times:
+Write a post, an email with 3 subject lines and 1 line of preview text, and 3 texts (announce, reminder, last call). Then list every date, time, and price you used so I can double-check.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Gift cards<small>Amounts, bonuses, where to buy</small></summary>
+          <div class="slip">
+<pre>Write a post, an email, and a text about our gift cards.
+Amounts:
+Where to buy (in store, online link):
+Any bonus (example: buy $50, get $10):
+Bonus ends:
+Give me 3 email subject lines and 1 line of preview text.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Wholesale<small>Pitch a business to carry your products</small></summary>
+          <div class="slip">
+<pre>Write a short email to a business that might want to carry or serve our products.
+Who they are (coffee shop, office, school, etc.):
+What we can supply:
+Minimum order:
+How far ahead to order:
+How to reach me:
+Sound like me, but a little more businesslike. No hard sell. Give me 2 subject lines and 1 line of preview text.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Large orders and catering<small>Office meetings, parties, school events</small></summary>
+          <div class="slip">
+<pre>Write a post and an email letting people know we take big orders.
+Good for (office meetings, parties, school events, etc.):
+What they can order and prices:
+How much notice we need:
+How to place an order:
+Delivery or pickup:
+Give me 3 email subject lines and 1 line of preview text.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Plan my week<small>Everything for the week in one sitting</small></summary>
+          <div class="slip">
+<pre>Here's what's going on this week:
+[list everything]
+Tell me what to send, where, and which day. Then write it all.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+      </div>
+
+      <div role="tabpanel" id="set-service" aria-labelledby="tab-service" hidden>
+        <details>
+          <summary>Follow-up email<small>Someone reached out but hasn't booked</small></summary>
+          <div class="slip">
+<pre>Write a follow-up email to someone who reached out but hasn't booked.
+Their name:
+What they asked about:
+When they reached out:
+How to book:
+Keep it short and friendly. No pressure. Give me 3 subject lines and 1 line of preview text.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>DM reply<small>Answer a message on Instagram or Facebook</small></summary>
+          <div class="slip">
+<pre>Help me reply to a DM.
+Their message:
+What I want to happen next (book a call, send pricing, answer a question):
+My booking link or next step:
+Keep it short, like a real text. Give me 2 options.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Appointment reminder<small>Fewer no-shows</small></summary>
+          <div class="slip">
+<pre>Write an appointment reminder.
+What the appointment is:
+Date and time:
+Where (address, link, or phone):
+What to bring or do first:
+How to reschedule:
+Write a text and a short email. For the email, give me 1 subject line and 1 line of preview text.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Review request<small>Ask a happy client for a review</small></summary>
+          <div class="slip">
+<pre>Write a message asking a happy client for a review.
+Their name:
+What I helped them with:
+Review link:
+Keep it short and easy to say yes to. Write a text and a short email with 2 subject lines and 1 line of preview text.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Social post<small>A tip, a client win, an offer</small></summary>
+          <div class="slip">
+<pre>Write a social post for my business.
+What it's about (a tip, a client win, an offer, a behind-the-scenes moment):
+The photo shows:
+Any link or next step:
+Make the first line say something real, not a tease. Give me a short and a medium version.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+        <details>
+          <summary>Plan my week<small>Everything for the week in one sitting</small></summary>
+          <div class="slip">
+<pre>Here's what's going on this week:
+[list everything]
+Tell me what to send, where, and which day. Then write it all.</pre>
+            <button class="copy" type="button">Copy prompt</button>
+          </div>
+        </details>
+      </div>
+
+      <button class="done" type="button" aria-pressed="false">Mark step 4 done</button>
+    </li>
+  </ol>
+
+  <!-- ROBOT CHECK -->
+  <section class="robot-sec" id="robot">
+    <h2>Does it sound like a robot?</h2>
+    <p class="big-q">Ask yourself: would I say this out loud at the counter? If not, fix it.</p>
+    <ul class="robot">
+      <li><strong>Punctuation you never type</strong><span>Long dashes, semicolons. Cut them.</span></li>
+      <li><strong>"It's not just a donut, it's a tradition."</strong><span>Just say the point.</span></li>
+      <li><strong>Everything in threes</strong><span>"Fresh, fluffy, and unforgettable." Use what's true. Often that's one thing.</span></li>
+      <li><strong>Canned openers</strong><span>"Calling all..." "We're thrilled to announce..." Start with the news.</span></li>
+      <li><strong>Fancy words</strong><span>Indulge, elevate, decadent. If a car wash could use the word, cut it.</span></li>
+      <li><strong>Saying it twice</strong><span>The last line repeats the first. Delete it.</span></li>
+      <li><strong>Fake hurry</strong><span>"Last chance!" when it isn't.</span></li>
+    </ul>
+    <p class="note">AI apps change, and so do their habits. If something new sounds off, add it to the robot list in your Project instructions.</p>
+
+    <h3>Fix-it prompt</h3>
+    <p>Paste any draft in, even one you didn't write with AI.</p>
+    <div class="slip">
+<pre>This sounds too much like AI. Fix it so it sounds like me. Keep every price, date, and time exactly the same. Don't add anything new. Make it shorter if you can. Then tell me what you changed.
+
+[paste draft here]</pre>
+      <button class="copy" type="button">Copy prompt</button>
+    </div>
+  </section>
+
+  <section class="help">
+    <h2>Stuck?</h2>
+    <p>Reply to your purchase email, or write to <a href="mailto:jordan@7thsensesolutions.com">jordan@7thsensesolutions.com</a>. A real person answers.</p>
+    <p class="foot">Bookmark this page so you can come back to the prompts anytime.<br />Brand Voice Kit by 7th Sense Solutions</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  /* ---- Settings: paste Loom share links here when the videos are ready ---- */
+  var VIDEOS = {
+    step1: "",  // Starting voice mode
+    step3: "",  // Pasting into a Project
+    step4: ""   // Asking for a message
+  };
+  var SHOW_VIDEO_PLACEHOLDERS = true; // set to false before launch if any video is still missing
+
+  /* ---- Storage that never breaks the page ---- */
+  function load(key, fallback) {
+    try { var v = window.localStorage.getItem("bvk:" + key); return v === null ? fallback : JSON.parse(v); }
+    catch (e) { return fallback; }
+  }
+  function save(key, value) {
+    try { window.localStorage.setItem("bvk:" + key, JSON.stringify(value)); } catch (e) {}
+  }
+
+  /* ---- Videos ---- */
+  function loomEmbed(url) {
+    var m = String(url).match(/loom\.com\/(?:share|embed)\/([a-zA-Z0-9]+)/);
+    return m ? "https://www.loom.com/embed/" + m[1] : "";
+  }
+  document.querySelectorAll("[data-video]").forEach(function (slot) {
+    var src = loomEmbed(VIDEOS[slot.getAttribute("data-video")] || "");
+    if (src) {
+      var f = document.createElement("iframe");
+      f.src = src; f.loading = "lazy"; f.allowFullscreen = true;
+      f.title = "How-to video";
+      slot.appendChild(f);
+    } else if (SHOW_VIDEO_PLACEHOLDERS) {
+      slot.innerHTML = '<div class="video__placeholder">Short how-to video goes here</div>';
+    } else {
+      slot.hidden = true;
+    }
+  });
+
+  /* ---- Copy buttons ---- */
+  function copyText(text, btn) {
+    var label = btn.textContent;
+    function ok() {
+      btn.textContent = "Copied. Now paste it in your AI app";
+      btn.classList.add("is-copied");
+      setTimeout(function () { btn.textContent = label; btn.classList.remove("is-copied"); }, 2600);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); ok(); }
+      catch (e) { btn.textContent = "Press and hold the text to copy it"; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+  }
+  document.querySelectorAll(".slip").forEach(function (slip) {
+    var pre = slip.querySelector("pre");
+    var btn = slip.querySelector(".copy");
+    if (btn && btn.id !== "copyInstructions") {
+      btn.addEventListener("click", function () { copyText(pre.textContent.trim(), btn); });
+    }
+  });
+
+  /* ---- Long prompt: show more ---- */
+  document.querySelectorAll(".slip pre").forEach(function (pre) {
+    if (pre.id === "instructionsOut") return;
+    requestAnimationFrame(function () {
+      if (pre.scrollHeight > pre.clientHeight + 4) {
+        var more = document.createElement("button");
+        more.type = "button"; more.className = "slip__more"; more.textContent = "Show the whole prompt";
+        more.addEventListener("click", function () {
+          var open = pre.parentNode.classList.toggle("is-open");
+          more.textContent = open ? "Show less" : "Show the whole prompt";
+        });
+        pre.insertAdjacentElement("afterend", more);
+      }
+    });
+  });
+
+  /* ---- Step 3 builder ---- */
+  var HEAD = [
+    "You write texts, emails, and social posts for my business.",
+    "",
+    "- Always sound like my voice guide below.",
+    "- Never make up prices, dates, or times. If something is missing, ask me.",
+    "- Give me 2 options.",
+    "- Before you show me anything, check it against the robot list and fix what you find.",
+    "",
+    "ROBOT LIST (never do these):",
+    "- Em dashes or punctuation I don't use",
+    "- \"It's not just X, it's Y\" or other setups like \"Here's the thing\"",
+    "- Lists of three just because it sounds nice",
+    "- Openers like \"Calling all\" or \"We're thrilled to announce\"",
+    "- Fancy words that could sell anything (indulge, elevate, decadent, curated)",
+    "- Saying the same thing twice",
+    "- Fake urgency",
+    "",
+    "MY VOICE GUIDE:"
+  ].join("\n");
+  var input = document.getElementById("guideInput");
+  var out = document.getElementById("instructionsOut");
+  var copyIns = document.getElementById("copyInstructions");
+  function render() {
+    var guide = input.value.trim();
+    out.textContent = HEAD + "\n" + (guide || "[your voice guide will show up here]");
+    copyIns.disabled = !guide;
+    copyIns.textContent = guide ? "Copy Project instructions" : "Paste your voice guide first";
+    save("guide", input.value);
+  }
+  input.value = load("guide", "");
+  input.addEventListener("input", render);
+  copyIns.addEventListener("click", function () { copyText(out.textContent, copyIns); });
+  render();
+
+  /* ---- Tabs ---- */
+  function setupTabs(ids, key) {
+    var tabs = ids.map(function (id) { return document.getElementById(id); });
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+      save(key, tab.id);
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { select(t); }); });
+    var saved = document.getElementById(load(key, ""));
+    if (saved && tabs.indexOf(saved) > -1) select(saved);
+  }
+  setupTabs(["tab-claude", "tab-chatgpt"], "app");
+  setupTabs(["tab-shop", "tab-service"], "biz");
+
+  /* ---- Done + progress ---- */
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".steps > .step"));
+  var done = load("done", {});
+  function paint() {
+    var count = 0;
+    steps.forEach(function (s) {
+      var n = s.getAttribute("data-step");
+      var isDone = !!done[n];
+      if (isDone) count++;
+      s.classList.toggle("is-done", isDone);
+      var b = s.querySelector(".done");
+      b.setAttribute("aria-pressed", isDone ? "true" : "false");
+      b.textContent = isDone ? "Done. Tap to undo" : "Mark step " + n + " done";
+    });
+    document.getElementById("progressFill").style.width = (count / steps.length * 100) + "%";
+    document.getElementById("progressText").textContent =
+      count === steps.length ? "All done. Nice work." : count + " of " + steps.length + " done";
+  }
+  steps.forEach(function (s) {
+    s.querySelector(".done").addEventListener("click", function () {
+      var n = s.getAttribute("data-step");
+      done[n] = !done[n];
+      save("done", done);
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
