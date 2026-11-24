@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thanks
+Disallow: /subscribed
+
+Sitemap: https://7thsensesolutions.com/sitemap.xml
