@@ -297,5 +297,22 @@ select.f-input{appearance:auto}
 </footer>
 
 </div>
+<script>
+(function(){
+  var f=document.querySelector('form[name="bf-campaign-intake"]'); if(!f) return;
+  f.addEventListener('submit',function(){
+    try{
+      var d=new FormData();
+      d.append('email_address',f.email.value);
+      d.append('first_name',f.name.value);
+      d.append('fields[business_name]',f.business.value);
+      d.append('fields[lead_source]','Black Friday 2026');
+      d.append('fields[source_page]','/black-friday');
+      d.append('tags[]','26423311');
+      navigator.sendBeacon('https://app.kit.com/forms/9654453/subscriptions',d);
+    }catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
