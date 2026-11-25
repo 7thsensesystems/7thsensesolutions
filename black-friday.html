@@ -301,6 +301,7 @@ select.f-input{appearance:auto}
 (function(){
   var f=document.querySelector('form[name="bf-campaign-intake"]'); if(!f) return;
   f.addEventListener('submit',function(){
+    try{sessionStorage.setItem('bf_claim',JSON.stringify({name:f.name.value,email:f.email.value,business:f.business.value}));}catch(e){}
     try{
       var d=new FormData();
       d.append('email_address',f.email.value);
