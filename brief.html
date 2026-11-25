@@ -97,5 +97,15 @@ textarea.f-input{min-height:112px;resize:vertical}
 </footer>
 
 </div>
+<script>
+(function(){
+  try{
+    var d=JSON.parse(sessionStorage.getItem('bf_claim')||'null'); if(!d) return;
+    [['b-name','name'],['b-email','email'],['b-biz','business']].forEach(function(p){
+      var el=document.getElementById(p[0]); if(el && !el.value && d[p[1]]) el.value=d[p[1]];
+    });
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
