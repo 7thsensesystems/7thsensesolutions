@@ -5,3 +5,4 @@ Disallow: /subscribed
 
 Sitemap: https://7thsensesolutions.com/sitemap.xml
 Disallow: /bf-thanks
+Disallow: /bf-booked
