@@ -51,7 +51,7 @@ textarea.f-input{min-height:112px;resize:vertical}
 </section>
 
 <section class="sec" style="padding:24px 48px 96px;max-width:880px;margin:0 auto">
-<form name="bf-campaign-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="background:#1A1F2C;border:1px solid #2A3142;border-radius:24px;padding:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px">
+<form name="bf-campaign-brief" method="POST" action="/bf-thanks" data-netlify="true" netlify-honeypot="bot-field" style="background:#1A1F2C;border:1px solid #2A3142;border-radius:24px;padding:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px">
 <input type="hidden" name="form-name" value="bf-campaign-brief">
 <p style="display:none"><label>Leave this empty <input name="bot-field"></label></p>
 
@@ -59,7 +59,7 @@ textarea.f-input{min-height:112px;resize:vertical}
 <div><label class="f-label" for="b-name">Your name</label><input class="f-input" id="b-name" name="name" type="text" autocomplete="name" required></div>
 <div><label class="f-label" for="b-email">Email you used to claim your spot</label><input class="f-input" id="b-email" name="email" type="email" autocomplete="email" required></div>
 <div><label class="f-label" for="b-biz">Business name</label><input class="f-input" id="b-biz" name="business" type="text" autocomplete="organization" required></div>
-<div><label class="f-label" for="b-site">Website or shop link</label><input class="f-input" id="b-site" name="website" type="url" placeholder="https://"></div>
+<div><label class="f-label" for="b-site">Website or shop link</label><input class="f-input" id="b-site" name="website" type="url" placeholder="https://" required><p class="f-hint">I'll pull your logo, colors, and style from here.</p></div>
 
 <p style="grid-column:1 / -1;margin:12px 0 0;font-family:Sora,sans-serif;font-weight:600;font-size:20px">Your offer</p>
 <div style="grid-column:1 / -1"><label class="f-label" for="b-offer">What's the Black Friday offer?</label><textarea class="f-input" id="b-offer" name="offer" placeholder="e.g. 25% off sitewide, free gift over $50, a holiday bundle..." required></textarea></div>
@@ -74,10 +74,7 @@ textarea.f-input{min-height:112px;resize:vertical}
 <div><label class="f-label" for="b-social">Where will you post them?</label><input class="f-input" id="b-social" name="social_platforms" type="text" placeholder="e.g. Instagram and Facebook" required></div>
 <div><label class="f-label" for="b-handles">Your handles</label><input class="f-input" id="b-handles" name="social_handles" type="text" placeholder="@yourbusiness"></div>
 
-<p style="grid-column:1 / -1;margin:12px 0 0;font-family:Sora,sans-serif;font-weight:600;font-size:20px">Your brand</p>
-<div style="grid-column:1 / -1"><label class="f-label" for="b-brand">Link to your brand kit</label><input class="f-input" id="b-brand" name="brand_kit_link" type="url" placeholder="Google Drive, Dropbox, or Canva link" required><p class="f-hint">Logo, brand colors, and fonts. No formal kit? A shared folder with those pieces works. Make sure the link is set so anyone with it can view.</p></div>
-<div style="grid-column:1 / -1"><label class="f-label" for="b-voice">How should your emails sound?</label><textarea class="f-input" id="b-voice" name="voice" placeholder="A few words on your tone, or link a past email you liked."></textarea></div>
-<div style="grid-column:1 / -1"><label class="f-label" for="b-notes">Anything else I should know?</label><textarea class="f-input" id="b-notes" name="notes" placeholder="Words to avoid, shipping cutoffs, return policy, must-haves..."></textarea></div>
+<div style="grid-column:1 / -1"><label class="f-label" for="b-notes">Anything else I should know?</label><textarea class="f-input" id="b-notes" name="notes" placeholder="Optional: shipping cutoffs, words to avoid, a brand kit link, anything I should match..."></textarea></div>
 
 <div style="grid-column:1 / -1;display:flex;gap:12px;align-items:flex-start"><input id="b-access" name="access_granted" type="checkbox" value="yes" required style="width:22px;height:22px;margin:2px 0 0;accent-color:#4D83FB;flex:0 0 auto"><label for="b-access" style="font-size:15px;color:#F7F5F2">I've added jordan@7thsensesolutions.com as a user in my email platform, or will by 10pm CT tonight.</label></div>
 <div style="grid-column:1 / -1;display:flex;gap:12px;align-items:flex-start"><input id="b-approve" name="approval_window" type="checkbox" value="yes" required style="width:22px;height:22px;margin:2px 0 0;accent-color:#4D83FB;flex:0 0 auto"><label for="b-approve" style="font-size:15px;color:#F7F5F2">I'll approve drafts or send edits within 4 hours, and I understand all sales are final.</label></div>

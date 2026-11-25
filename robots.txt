@@ -4,3 +4,4 @@ Disallow: /thanks
 Disallow: /subscribed
 
 Sitemap: https://7thsensesolutions.com/sitemap.xml
+Disallow: /bf-thanks
