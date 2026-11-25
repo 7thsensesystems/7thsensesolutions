@@ -6,7 +6,9 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Your Black Friday Campaign Brief | 7th Sense Solutions</title>
 <meta name="description" content="Campaign brief for 7th Sense Solutions Black Friday clients.">
-<link rel="icon" type="image/png" href="/7ss-favicon-256.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&amp;family=Manrope:wght@400;500;600;700&amp;family=Kaushan+Script&amp;display=swap">
 <style>
@@ -20,6 +22,8 @@ a{color:#4D83FB}a:hover{color:#83D7F7}
 .f-input::placeholder{color:#7D869A}
 textarea.f-input{min-height:112px;resize:vertical}
 .btn-primary:hover{background:#83D7F7}
+.wm-gb{background:linear-gradient(100deg,#83D7F7,#4D83FB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.legal a{color:#A9B0C0}.legal a:hover{color:#F7F5F2}
 @media (max-width:720px){.sec{padding:40px 20px !important}.nav{padding:16px 20px !important}.brief-h1{font-size:36px !important}}
 </style>
 </head>
@@ -27,19 +31,22 @@ textarea.f-input{min-height:112px;resize:vertical}
 <div style="width:100%;background:#131721;color:#F7F5F2;font-family:Manrope,sans-serif;font-size:17px;line-height:1.6">
 
 <header class="nav" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 48px;max-width:1200px;margin:0 auto">
-<a href="https://7thsensesolutions.com" style="display:flex;align-items:baseline;gap:6px;text-decoration:none;color:#F7F5F2">
-<span style="font-family:'Kaushan Script',cursive;font-size:30px;color:#4D83FB">7th</span>
-<span style="font-family:Sora,sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.01em">Sense Solutions</span>
+<a href="/" aria-label="7th Sense Solutions home" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#F7F5F2">
+<img src="/images/mark.png" alt="" style="display:block;width:40px;height:auto;flex:none">
+<span style="display:inline-flex;flex-direction:column;line-height:0.95;font-family:Manrope,sans-serif">
+<span style="font-weight:800;font-size:21px;letter-spacing:-0.035em;white-space:nowrap">7th <span class="wm-gb">sense</span></span>
+<span style="font-weight:500;font-size:16px;letter-spacing:-0.01em;color:#A9B0C0">solutions</span>
+</span>
 </a>
 </header>
 
 <section class="sec" style="padding:56px 48px 32px;max-width:880px;margin:0 auto">
 <p style="margin:0 0 16px;font-size:14px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4D83FB">You're in. Step 2 of 4</p>
 <h1 class="brief-h1" style="margin:0 0 20px;font-family:Sora,sans-serif;font-weight:800;font-size:48px;line-height:1.08;letter-spacing:-0.02em">Now tell me about your offer.</h1>
-<p style="margin:0 0 24px;font-size:18px;color:#C3C9D6">This is everything I need to write and build your 5 emails. Rough notes are fine. If something isn't decided yet, say so and I'll follow up.</p>
+<p style="margin:0 0 24px;font-size:18px;color:#C3C9D6">This is everything I need to write and build your 5 emails and 5 social posts. Rough notes are fine. If something isn't decided yet, say so and I'll follow up.</p>
 <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:16px;background:#17234A;border:1px solid #2B3D7A">
 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#83D7F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-<p style="margin:0;font-size:16px"><strong>Due by end of day Wednesday 11/25.</strong> Your first email goes out Black Friday morning, so a late brief means a late launch. Work begins once your $500 payment is received.</p>
+<p style="margin:0;font-size:16px"><strong>Due by 10pm CT tonight, Wed 11/25.</strong> Send this brief and add jordan@7thsensesolutions.com as a user in your email platform by then. Your first email goes out Black Friday morning, so late access means a late launch. Work begins once your $500 payment is received. All sales are final.</p>
 </div>
 </section>
 
@@ -63,11 +70,17 @@ textarea.f-input{min-height:112px;resize:vertical}
 <p style="grid-column:1 / -1;margin:12px 0 0;font-family:Sora,sans-serif;font-weight:600;font-size:20px">Who gets it</p>
 <div style="grid-column:1 / -1"><label class="f-label" for="b-segment">Which list, segment, or tag should get these emails?</label><input class="f-input" id="b-segment" name="list_segment" type="text" placeholder="e.g. All subscribers, past buyers, VIP tag" required><p class="f-hint">Want different emails for different groups? Note it here.</p></div>
 
+<p style="grid-column:1 / -1;margin:12px 0 0;font-family:Sora,sans-serif;font-weight:600;font-size:20px">Your social posts</p>
+<div><label class="f-label" for="b-social">Where will you post them?</label><input class="f-input" id="b-social" name="social_platforms" type="text" placeholder="e.g. Instagram and Facebook" required></div>
+<div><label class="f-label" for="b-handles">Your handles</label><input class="f-input" id="b-handles" name="social_handles" type="text" placeholder="@yourbusiness"></div>
+
 <p style="grid-column:1 / -1;margin:12px 0 0;font-family:Sora,sans-serif;font-weight:600;font-size:20px">Your brand</p>
 <div style="grid-column:1 / -1"><label class="f-label" for="b-brand">Link to your brand kit</label><input class="f-input" id="b-brand" name="brand_kit_link" type="url" placeholder="Google Drive, Dropbox, or Canva link" required><p class="f-hint">Logo, brand colors, and fonts. No formal kit? A shared folder with those pieces works. Make sure the link is set so anyone with it can view.</p></div>
 <div style="grid-column:1 / -1"><label class="f-label" for="b-voice">How should your emails sound?</label><textarea class="f-input" id="b-voice" name="voice" placeholder="A few words on your tone, or link a past email you liked."></textarea></div>
 <div style="grid-column:1 / -1"><label class="f-label" for="b-notes">Anything else I should know?</label><textarea class="f-input" id="b-notes" name="notes" placeholder="Words to avoid, shipping cutoffs, return policy, must-haves..."></textarea></div>
 
+<div style="grid-column:1 / -1;display:flex;gap:12px;align-items:flex-start"><input id="b-access" name="access_granted" type="checkbox" value="yes" required style="width:22px;height:22px;margin:2px 0 0;accent-color:#4D83FB;flex:0 0 auto"><label for="b-access" style="font-size:15px;color:#F7F5F2">I've added jordan@7thsensesolutions.com as a user in my email platform, or will by 10pm CT tonight.</label></div>
+<div style="grid-column:1 / -1;display:flex;gap:12px;align-items:flex-start"><input id="b-approve" name="approval_window" type="checkbox" value="yes" required style="width:22px;height:22px;margin:2px 0 0;accent-color:#4D83FB;flex:0 0 auto"><label for="b-approve" style="font-size:15px;color:#F7F5F2">I'll approve drafts or send edits within 4 hours, and I understand all sales are final.</label></div>
 <div style="grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:8px">
 <button type="submit" class="btn-primary" style="min-height:52px;padding:0 32px;border:0;border-radius:999px;background:#4D83FB;color:#131721;font:700 17px Manrope,sans-serif;cursor:pointer">Send my brief</button>
 <span style="font-size:14px;color:#A9B0C0">Drafts come back to you for one round of edits before anything goes live.</span>
@@ -78,8 +91,8 @@ textarea.f-input{min-height:112px;resize:vertical}
 
 <footer style="border-top:1px solid #2A3142">
 <div class="sec" style="padding:32px 48px;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#A9B0C0">
-<span><span style="font-family:'Kaushan Script',cursive;color:#4D83FB">Clarity in Motion</span>  ·  7th Sense Solutions by Jordan Fletcher</span>
-<a href="mailto:jordan@7thsensesolutions.com">jordan@7thsensesolutions.com</a>
+<span><span style="font-family:'Kaushan Script',cursive;color:#4FE5C2;font-size:17px">Make it make sense.</span>  ·  © 2026 7th Sense Solutions · St. Louis, Missouri</span>
+<span class="legal" style="display:flex;flex-wrap:wrap;gap:8px 20px"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms</a><a href="/refunds">Refund Policy</a><a href="/bf-terms">Offer terms</a><a href="mailto:jordan@7thsensesolutions.com">jordan@7thsensesolutions.com</a></span>
 </div>
 </footer>
 
